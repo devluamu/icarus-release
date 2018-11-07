@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--
+    Name: Youplay - Game Template based on Bootstrap
+    Version: 3.3.0
+    Author: nK
+    Website: https://nkdev.info/
+    Purchase: https://themeforest.net/item/youplay-game-template-based-on-bootstrap/11306207?ref=_nK
+    Support: https://nk.ticksy.com/
+    License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
+    Copyright 2018.
+-->
+    
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>icarus | Mu origin 7.0</title>
+
+    <meta name="description" content="icarus - Mu origin 7.0">
+    <meta name="keywords" content="mu, free, muorigin, webzen, muorigin2, game, mobile">
+    <meta name="author" content="icarus">
+
+    <link rel="icon" type="image/png" href="{% static 'web/images/dark/image.png' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Passion+One|Cantarell:400,400italic,700">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'web/vendor/bootstrap/dist/css/bootstrap.min.css' %}" />
+
+    <!-- Flickity -->
+    <link rel="stylesheet" href="{% static 'web/vendor/flickity/dist/flickity.min.css' %}" />
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{% static 'web/vendor/magnific-popup/dist/magnific-popup.css' %}" />
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="{% static 'web/vendor/slider-revolution/css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'web/vendor/slider-revolution/css/layers.css' %}">
+    <link rel="stylesheet" href="{% static 'web/vendor/slider-revolution/css/navigation.css' %}">
+
+    <!-- Bootstrap Sweetalert -->
+    <link rel="stylesheet" href="{% static 'web/vendor/bootstrap-sweetalert/dist/sweetalert.css' %}" />
+
+    <!-- Social Likes -->
+    <link rel="stylesheet" href="{% static 'web/vendor/social-likes/dist/social-likes_flat.css' %}" />
+
+    <!-- FontAwesome -->
+    <script defer src="{% static 'web/vendor/font-awesome/svg-with-js/js/fontawesome-all.min.js' %}"></script>
+    <script defer src="{% static 'web/vendor/font-awesome/svg-with-js/js/fa-v4-shims.min.js' %}"></script>
+
+    <!-- Youplay -->
+    <link rel="stylesheet" href="{% static 'web/css/youplay-anime.css' %}">
+
+    <!-- RTL (uncomment this to enable RTL support) -->
+    <!-- <link rel="stylesheet" href="assets/css/youplay-rtl.min.css" /> -->
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{% static 'web/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/custom-anime.css' %}">
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="{% static 'web/vendor/jquery/dist/jquery.min.js' %}"></script>
+    
+    
+</head>
+
+
+<body>
+    
+        <!-- Preloader -->
+<div class="page-preloader preloader-wrapp">
+    
+        <img src="{% static 'web/images/logo-muicraus.png' %}" alt="">
+    
+    <div class="preloader"></div>
+</div>
+<!-- /Preloader -->
+
+    
+<!-- Navbar -->
+<nav class="navbar-youplay navbar navbar-default navbar-fixed-top navbar-small">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="off-canvas" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    이카루스
+                    <!--<img src="{% static 'web/images/logo-light.png' %}" alt="" -->
+                </a>
+            
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{% url 'notice' %}">
+                                공지사항
+                            </a>
+                        </li>
+			<li>
+			    <a href="http://pf.kakao.com/_xkBxgTj">
+				고객센터
+			    </a>
+			</li>
+			<li>
+			    <a href="http://pf.kakao.com/_xkBxgTj">
+				문의/신고
+			    </a>
+			</li>
+                        <li>
+                            <a href="{% url 'term' %}">
+                                이용약관
+                            </a>
+                        </li>
+
+                </ul>
+        </div>
+    </div>
+</nav>
+<!-- /Navbar -->
+
+
+
+
+    
+
+    <div class="content-wrap">
+        
+            <!--
+    Banner
+
+    Additional classes:
+        .small
+        .xsmall
+        .big
+        .full
+-->
+<section class="youplay-banner banner-top youplay-banner-parallax xsmall">
+    
+        <div class="image" data-speed="0.4">
+            <img src="{% static 'web/images/anime/icarus-notice.png' %}" alt="" class="jarallax-img">
+        </div>
+    
+
+    <div class="info">
+        <div>
+            <div class="container">
+                
+                
+                    <h1 class="h1"></h1>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- /Banner -->
+
+    <div class="youplay-content">
+
+        <!-- Recent News -->
+        <h2 class="container h1" id="news"></h2>
+        <section class="youplay-news container">
+            <!-- Single News Block -->
+        {% for post in posts %}
+            <div class="news-one">
+                <div class="row vertical-gutter">
+                    <div class="col-md-8">
+                        <div class="clearfix">
+                            <h3 class="h2 pull-left m-0"><a href="{% url 'detail' post.id %}">{{post.title}}</a></h3>
+                            <span class="date pull-right"><i class="fa fa-calendar"></i>{{post.pub_date}}</span>
+                        </div>
+                        <div class="description" style="max-height: 70px; overflow:hidden; text-overflow: ellipsis; word-break:break-all">
+                            <p>
+                                {{ post.text }}
+                            </p>
+                        </div>
+                        <a href="{% url 'detail' post.id %}" class="btn read-more pull-left">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <!-- /Single News Block -->
+        </section>
+        <div class="pagination">
+            <span class="step-links">
+              {% if posts.has_previous %}
+                <a href="?page={{ posts.previous_page_number }}">previous</a>
+              {% endif %}
+              <span class="current" style="padding-left: 50px">
+                Page {{ posts.number }}. 
+              </span>
+              {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number}}">next</a>
+              {% endif %}
+            </span>
+        </div>
+      </div>
+
+
+    </div>
+
+    
+
+    
+
+    
+<!-- START: Scripts -->
+<script>
+function myFunction(){
+    alert(Math.random() + " 신청 완료되었습니다. 보고계신 메세지를 캡쳐한 뒤  오픈 후  고객센터로 보내주세요.");
+}
+</script>
+
+<!-- Object Fit Polyfill -->
+<script src="{% static 'web/vendor/object-fit-images/dist/ofi.min.js' %}"></script>
+
+<!-- jQuery -->
+<script src="{% static 'web/vendor/jquery/dist/jquery.min.js' %}"></script>
+
+<!-- Hexagon Progress -->
+<script src="{% static 'web/vendor/HexagonProgress/jquery.hexagonprogress.min.js' %}"></script>
+
+<!-- Bootstrap -->
+<script src="{% static 'web/vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+<!-- Jarallax -->
+<script src="{% static 'web/vendor/jarallax/dist/jarallax.min.js' %}"></script>
+
+<!-- Flickity -->
+<script src="{% static 'web/vendor/flickity/dist/flickity.pkgd.min.js' %}"></script>
+
+<!-- jQuery Countdown -->
+<script src="{% static 'web/vendor/jquery-countdown/dist/jquery.countdown.min.js' %}"></script>
+
+<!-- Moment.js -->
+<script src="{% static 'web/vendor/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'web/vendor/moment-timezone/builds/moment-timezone-with-data.min.js' %}"></script>
+
+<!-- Magnific Popup -->
+<script src="{% static 'web/vendor/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+
+<!-- Revolution Slider -->
+<script src="{% static 'web/vendor/slider-revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'web/vendor/slider-revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+
+<!-- ImagesLoaded -->
+<script src="{% static 'web/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+
+<!-- Isotope -->
+<script src="{% static 'web/vendor/isotope-layout/dist/isotope.pkgd.min.js' %}"></script>
+
+<!-- Bootstrap Validator -->
+<script src="{% static 'web/vendor/bootstrap-validator/dist/validator.min.js' %}"></script>
+
+<!-- Bootstrap Sweetalert -->
+<script src="{% static 'web/vendor/bootstrap-sweetalert/dist/sweetalert.min.js' %}"></script>
+
+<!-- Social Likes -->
+<script src="{% static 'web/vendor/social-likes/dist/social-likes.min.js' %}"></script>
+
+<!-- Youplay -->
+<script src="{% static 'web/js/youplay.min.js' %}"></script>
+<script src="{% static 'web/js/youplay-init.js' %}"></script>
+
+
+<script>
+  $(".countdown").each(function() {
+    var tz = $(this).attr('data-timezone');
+    var end = $(this).attr('data-end');
+        end = moment.tz(end, tz).toDate();
+    $(this).countdown(end, function(event) {
+        $(this).html(
+            event.strftime([
+                '<div class="countdown-item">',
+                    '<span>Days</span>',
+                    '<span><span>%D</span></span>',
+                '</div>',
+                '<div class="countdown-item">',
+                    '<span>Hours</span>',
+                    '<span><span>%H</span></span>',
+                '</div>',
+                '<div class="countdown-item">',
+                    '<span>Minutes</span>',
+                    '<span><span>%M</span></span>',
+                '</div>',
+                '<div class="countdown-item">',
+                    '<span>Seconds</span>',
+                    '<span><span>%S</span></span>',
+                '</div>'
+            ].join(''))
+        );
+    });
+  });
+</script>
+
+
+<!-- END: Scripts -->
+
+
+    
+</body>
+</html>
